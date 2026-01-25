@@ -133,7 +133,7 @@ const Home = () => {
                         ) : (
                             <button
                                 className="bg-[#ccff00] text-black pl-8 pr-2 rounded-full font-bold text-lg flex items-center gap-4 hover:opacity-90 transition-opacity group shadow-[0_0_25px_rgba(204,255,0,0.4)] h-[68px]"
-                                onClick={() => document.getElementById('navbar-connect-btn')?.click()} // Dirty hack? No.
+                                onClick={() => document.getElementById('navbar-connect-btn')?.click()}
                             >
                                 Get Started
                                 <div className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center group-hover:rotate-45 transition-transform">
