@@ -111,12 +111,12 @@ const Home = () => {
             <div className="relative z-10 w-full h-screen flex items-end md:items-center px-6 md:px-20 pb-20 md:pb-0 pointer-events-none">
                 <div className="max-w-4xl text-left pointer-events-auto mt-20 md:mt-0">
                     <h1 className="text-6xl md:text-8xl font-bold leading-[1.1] mb-8 tracking-tighter">
-                        Explore the Next <br />
-                        Evolution of <span className="text-white">Web3 Wallets</span>
+                        The Future of <br />
+                        Transparent <span className="text-[#ccff00]">Supply Chains</span>
                     </h1>
 
                     <p className="text-gray-400 text-xl md:text-2xl max-w-2xl mb-12 leading-relaxed font-light">
-                        Secure, lightning-fast, and designed for seamless DeFi, NFTs, and multichain interaction.
+                        Track every product journey from origin to destination with immutable blockchain records. Authentic. Decentralized. Trusted.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-6 items-start">
