@@ -8,21 +8,21 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { LayoutDashboard, ArrowUpRight, Box, Clock, MapPin, Eye, Edit } from 'lucide-react';
 
 const Dashboard = () => {
-    const { wallet, contract } = useWallet();
+    const { wallet, contract, readContract } = useWallet();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        if (wallet.isConnected && contract) {
+        if (wallet.isConnected && readContract) {
             fetchUserProducts();
         }
-    }, [wallet.isConnected, contract]);
+    }, [wallet.isConnected, readContract]);
 
     const fetchUserProducts = async () => {
         try {
             setLoading(true);
-            const filter = contract.filters.ProductCreated(null, null, wallet.address);
-            const events = await contract.queryFilter(filter);
+            const filter = readContract.filters.ProductCreated(null, null, wallet.address);
+            const events = await readContract.queryFilter(filter);
             events.sort((a, b) => b.blockNumber - a.blockNumber);
 
             const productList = events.map(event => ({

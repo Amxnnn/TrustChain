@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import toast from 'react-hot-toast';
 import { connectWallet, switchToSepolia, getContract, isStakeholder as checkIsStakeholder } from '../utils/contract';
-import { SEPOLIA_CHAIN_ID } from '../utils/constants';
+import { SEPOLIA_CHAIN_ID, CONTRACT_ADDRESS, CONTRACT_ABI } from '../utils/constants';
 
 const WalletContext = createContext();
 
@@ -19,6 +19,16 @@ export const WalletProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [isStakeholder, setIsStakeholder] = useState(false);
+
+    // Read-only provider & contract for queryFilter / eth_getLogs
+    const readProvider = React.useMemo(
+        () => new ethers.JsonRpcProvider(import.meta.env.VITE_RPC_URL),
+        []
+    );
+    const readContract = React.useMemo(
+        () => new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, readProvider),
+        [readProvider]
+    );
 
     // Initial Auto-Connect & Event Listeners
     useEffect(() => {
@@ -187,6 +197,7 @@ export const WalletProvider = ({ children }) => {
     const value = {
         wallet,
         contract,
+        readContract,
         provider,
         signer,
         loading,
