@@ -1,16 +1,18 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
-const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL || "https://eth-sepolia.g.alchemy.com/v2/YOUR-API-KEY";
-const PRIVATE_KEY = process.env.PRIVATE_KEY || "0x0000000000000000000000000000000000000000000000000000000000000000";
-
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
     solidity: "0.8.20",
     networks: {
         sepolia: {
-            url: SEPOLIA_RPC_URL,
-            accounts: [PRIVATE_KEY],
+            url: process.env.SEPOLIA_RPC_URL,
+            accounts: [process.env.PRIVATE_KEY],
         },
     },
+    etherscan: {
+        apiKey: "E7ZI7K55KQTQIA5MA7FPJ66B1DBUVJM8U1"
+
+    },
 };
+
