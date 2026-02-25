@@ -1,6 +1,6 @@
 import ContractABI from '../../../artifacts/contracts/SupplyChain.sol/SupplyChain.json';
 
-export const CONTRACT_ADDRESS = "0x70ccA07C9b86127Bca4736c2B2F0BFAa3aeb0057";
+export const CONTRACT_ADDRESS = "0xa24abd822411Ae45338563A8b59EBC700aFEC262";
 export const CONTRACT_ABI = ContractABI.abi;
 
 export const SEPOLIA_CHAIN_ID = 11155111;
