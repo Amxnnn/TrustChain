@@ -22,7 +22,9 @@ const Dashboard = () => {
         try {
             setLoading(true);
             const filter = readContract.filters.ProductCreated(null, null, wallet.address);
-            const events = await readContract.queryFilter(filter);
+            const latestBlock = await readContract.runner.provider.getBlockNumber();
+            const fromBlock = Math.max(0, latestBlock - 100000);
+            const events = await readContract.queryFilter(filter, fromBlock, latestBlock);
             events.sort((a, b) => b.blockNumber - a.blockNumber);
 
             const productList = events.map(event => ({
