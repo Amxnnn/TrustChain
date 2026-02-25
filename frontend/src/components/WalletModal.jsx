@@ -45,7 +45,6 @@ const WalletModal = ({ isOpen, onClose, onConnect }) => {
                         <div className="flex items-center gap-4">
                             <div className="w-10 h-10 rounded-full bg-[#AB9FF2]/20 flex items-center justify-center p-1">
                                 <img src="/images/Phantom-Icon_.png" alt="Phantom" className="w-full h-full object-contain" />
-                                {/* Fallback icon if image fails, simpler to just use generic wallet style or text if needed, but keeping simple image ref for now */}
                             </div>
                             <div className="text-left">
                                 <h3 className="text-white font-bold group-hover:text-[#ccff00] transition-colors">Phantom</h3>

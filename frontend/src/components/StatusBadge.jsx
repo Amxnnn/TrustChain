@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Package, Truck, Warehouse, Store, CheckCircle, AlertCircle } from 'lucide-react';
 
 /**
- * StatusBadge Component
  * Displays a colorful badge with icon for product status
  */
 const StatusBadge = ({ status, size = 'md' }) => {

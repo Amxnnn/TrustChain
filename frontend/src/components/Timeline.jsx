@@ -20,7 +20,6 @@ const Timeline = ({ events = [] }) => {
     };
 
     const getEventIcon = (status) => {
-        // You can customize icons based on status text if you want
         return <MapPin size={18} className="text-white" />;
     };
 
@@ -42,7 +41,6 @@ const Timeline = ({ events = [] }) => {
                 return (
                     <div key={index} className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group ${isLeft ? 'md:flex-row-reverse' : ''}`}>
 
-                        {/* Icon (Center Node) */}
                         <div className={`absolute left-0 sm:left-5 md:left-1/2 md:-translate-x-1/2 -translate-y-1/2 md:translate-y-0 flex items-center justify-center p-2 rounded-full ring-4 ring-white shadow-sm ${colorClass} z-10`}>
                             {getEventIcon(event.status)}
                         </div>

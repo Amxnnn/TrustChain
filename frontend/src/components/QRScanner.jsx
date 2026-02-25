@@ -14,11 +14,9 @@ const QRScanner = ({ onScan, onError, onClose }) => {
     const [initError, setInitError] = useState(null);
 
     useEffect(() => {
-        // Small delay to ensure modal is rendered
         const timeoutId = setTimeout(() => {
             try {
                 if (scannerRef.current) {
-                    // Already initialized
                     return;
                 }
 
@@ -49,8 +47,6 @@ const QRScanner = ({ onScan, onError, onClose }) => {
                 };
 
                 const onScanFailure = (errorMessage) => {
-                    // handle scan failure, usually better to ignore frame errors
-                    // onError(errorMessage); 
                 };
 
                 scanner.render(onScanSuccess, onScanFailure);
@@ -62,7 +58,6 @@ const QRScanner = ({ onScan, onError, onClose }) => {
             }
         }, 100);
 
-        // Cleanup function
         return () => {
             clearTimeout(timeoutId);
             if (scannerRef.current) {
@@ -77,7 +72,6 @@ const QRScanner = ({ onScan, onError, onClose }) => {
     return (
         <div className="fixed inset-0 z-[100] bg-black bg-opacity-80 flex items-center justify-center p-4 backdrop-blur-sm animate-in fade-in duration-200">
             <div className="bg-white rounded-2xl w-full max-w-md overflow-hidden shadow-2xl relative">
-                {/* Header */}
                 <div className="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
                     <h3 className="flex items-center gap-2 font-semibold text-gray-800">
                         <Camera className="text-blue-600" size={20} />
@@ -103,7 +97,6 @@ const QRScanner = ({ onScan, onError, onClose }) => {
                     )}
                 </div>
 
-                {/* Footer */}
                 <div className="p-4 text-center bg-gray-50 border-t border-gray-100">
                     <p className="text-sm text-gray-500">
                         Position the QR code within the frame to scan

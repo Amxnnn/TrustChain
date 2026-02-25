@@ -42,17 +42,14 @@ const Globe = () => {
 
     return (
         <group rotation={[0, 0, Math.PI / 6]}>
-            {/* Main transparent sphere for volume */}
             <Sphere args={[2.5, 64, 64]}>
                 <meshBasicMaterial color="#000000" transparent opacity={0.8} />
             </Sphere>
 
-            {/* Wireframe outer shell */}
             <Sphere args={[2.5, 32, 32]}>
                 <meshBasicMaterial color="#333333" wireframe transparent opacity={0.3} />
             </Sphere>
 
-            {/* Particle layer */}
             <points ref={meshRef}>
                 <bufferGeometry>
                     <bufferAttribute
@@ -77,7 +74,6 @@ const Globe = () => {
                 />
             </points>
 
-            {/* Connecting lines for typical "network" look */}
             <Sphere args={[2.51, 16, 16]}>
                 <meshBasicMaterial color="#444444" wireframe transparent opacity={0.15} />
             </Sphere>
@@ -97,7 +93,6 @@ const Home = () => {
 
             <Navbar />
 
-            {/* 3D Background - Fixed for scroll effect */}
             <div className="fixed inset-0 z-0 pointer-events-none">
                 <Canvas camera={{ position: [0, 0, 8], fov: 40 }}>
                     <ambientLight intensity={0.5} />
@@ -107,7 +102,6 @@ const Home = () => {
                 </Canvas>
             </div>
 
-            {/* Hero Section - Full Height */}
             <div className="relative z-10 w-full h-screen flex items-end md:items-center px-6 md:px-20 pb-20 md:pb-0 pointer-events-none">
                 <div className="max-w-4xl text-left pointer-events-auto mt-20 md:mt-0">
                     <h1 className="text-6xl md:text-8xl font-bold leading-[1.1] mb-8 tracking-tighter">

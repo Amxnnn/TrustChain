@@ -4,12 +4,11 @@ import { Scan } from 'lucide-react';
 const FeatureCard = ({ title, description }) => {
     return (
         <div className="relative bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 flex flex-col justify-end h-[320px] overflow-hidden group hover:border-[#ccff00]/30 transition-colors">
-            {/* Top Left Grid Icon */}
+            {/* Icon */}
             <div className="absolute top-6 left-6 text-gray-600">
                 <Scan size={24} strokeWidth={1.5} />
             </div>
 
-            {/* Text Content - Bottom Left */}
             <div className="relative z-10 max-w-[85%]">
                 <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{description}</p>

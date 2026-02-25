@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Loader2 } from 'lucide-react';
 
-/**
- * LoadingSpinner Component
- * Displays an animated spinner with optional text
- */
+//spinner
 const LoadingSpinner = ({ size = 'md', text }) => {
     const sizeClasses = {
         sm: 'w-4 h-4',

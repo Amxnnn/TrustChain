@@ -45,7 +45,6 @@ const Header = () => {
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center">
 
-                    {/* Logo */}
                     <Link to="/" className="flex items-center gap-2 group">
                         <div className="bg-gradient-to-br from-blue-600 to-purple-600 text-white p-2 rounded-lg group-hover:shadow-lg transition-all duration-300">
                             <Box size={24} />
@@ -56,7 +55,6 @@ const Header = () => {
                         </div>
                     </Link>
 
-                    {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-1 bg-gray-100/50 p-1 rounded-full backdrop-blur-sm border border-white/20">
                         {navLinks.map((link) => {
                             const Icon = link.icon;
@@ -79,13 +77,10 @@ const Header = () => {
                         })}
                     </nav>
 
-                    {/* Right Area */}
                     <div className="flex items-center gap-3">
                         <div className="hidden md:block">
                             <WalletConnect />
                         </div>
-
-                        {/* Mobile Menu Toggle */}
                         <button
                             className="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -96,8 +91,6 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Mobile Menu Overlay */}
             {mobileMenuOpen && (
                 <div className="absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl md:hidden animate-in slide-in-from-top-2">
                     <div className="container mx-auto px-4 py-4 space-y-4">

@@ -44,7 +44,7 @@ const ProductCard = ({ product, onClick }) => {
                 </div>
             </div>
 
-            {/* Details Grid */}
+    
             <div className="space-y-3 mb-6 flex-grow">
                 {/* Status */}
                 <div>
@@ -64,13 +64,11 @@ const ProductCard = ({ product, onClick }) => {
                 </div>
             </div>
 
-            {/* Footer Actions */}
             <div className="pt-4 border-t border-gray-50 mt-auto flex justify-between items-center">
                 <button
                     className="flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-gray-800 transition-colors"
                     onClick={(e) => {
                         e.stopPropagation();
-                        // Logic to open QR modal could go here or passed down
                     }}
                 >
                     <QrCode size={16} />

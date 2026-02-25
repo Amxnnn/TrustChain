@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * SkeletonLoader Component
  * Displays loading placeholders for different content types
  */
 const SkeletonLoader = ({ type = 'text', count = 1 }) => {

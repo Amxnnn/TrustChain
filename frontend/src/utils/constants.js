@@ -22,3 +22,4 @@ export const CATEGORY_OPTIONS = [
     'Automotive',
     'Other'
 ];
+

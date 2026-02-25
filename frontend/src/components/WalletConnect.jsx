@@ -59,7 +59,6 @@ const WalletConnect = () => {
     // Connected State
     return (
         <div className="relative">
-            {/* Main Button */}
             <button
                 onClick={() => setShowDropdown(!showDropdown)}
                 onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
@@ -73,11 +72,9 @@ const WalletConnect = () => {
                 <span className="font-mono font-medium">{truncateAddress(wallet.address)}</span>
             </button>
 
-            {/* Dropdown Menu */}
             {showDropdown && (
                 <div className="absolute top-full right-0 mt-3 w-72 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-200">
 
-                    {/* Header */}
                     <div className="p-4 bg-gray-50 border-b border-gray-100">
                         <p className="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Connected Wallet</p>
                         <div className="flex items-center justify-between">
@@ -104,7 +101,6 @@ const WalletConnect = () => {
                         </div>
                     )}
 
-                    {/* Actions */}
                     <div className="p-2">
                         <a
                             href={`https://sepolia.etherscan.io/address/${wallet.address}`}

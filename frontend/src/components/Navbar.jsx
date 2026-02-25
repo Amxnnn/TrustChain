@@ -27,14 +27,12 @@ const Navbar = () => {
     return (
         <>
             <nav className="absolute top-0 left-0 w-full p-6 md:px-12 md:py-8 flex justify-between items-center z-50">
-                {/* Logo */}
                 <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
                     <Link to="/" className="text-3xl font-bold tracking-tighter text-white">
                         TrustChain
                     </Link>
                 </div>
 
-                {/* Centered Pill Navigation */}
                 <div className="hidden md:flex items-center gap-1 bg-white/5 backdrop-blur-md border border-white/10 px-2 py-2 rounded-full text-sm text-gray-300 font-medium absolute left-1/2 -translate-x-1/2 shadow-lg shadow-black/20 hover:border-white/20 transition-all">
                     <Link to="/" className={`flex items-center gap-2 px-5 py-2.5 rounded-full transition-all hover:scale-105 ${isActive('/') ? 'bg-white/10 text-white' : 'hover:bg-white/10 hover:text-white'}`}>
                         <Home size={16} /> Home
@@ -53,7 +51,7 @@ const Navbar = () => {
                     </Link>
                 </div>
 
-                {/* CTA / Wallet Button */}
+                {/* wallet button */}
                 {wallet.isConnected ? (
                     <button
                         onClick={disconnectWallet}

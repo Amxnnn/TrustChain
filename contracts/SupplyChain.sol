@@ -42,7 +42,7 @@ contract SupplyChain {
     
     function createProduct(string calldata _ipfsHash) external onlyStakeholder returns (uint256) {
         productCount++;
-        // Generate a pseudo-random unique ID using timestamp, sender and nonce
+
         uint256 id = uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender, productCount)));
         
         products[id] = Product(_ipfsHash, msg.sender, block.timestamp, true);
